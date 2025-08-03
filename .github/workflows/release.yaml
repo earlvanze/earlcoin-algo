@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+      - '.vscode/**'
+      - '.idea/**'
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  earlcoin-algo-contracts-validate:
+    name: Run earlcoin-algo-contracts release
+    secrets: inherit
+    uses: ./.github/workflows/earlcoin-algo-contracts-ci.yaml
+
+  earlcoin-algo-contracts-release:
+    name: Run earlcoin-algo-contracts release
+    secrets: inherit
+    uses: ./.github/workflows/earlcoin-algo-contracts-cd.yaml
+    needs: earlcoin-algo-contracts-validate
+
+  earlcoin-algo-frontend-validate:
+    name: Run earlcoin-algo-frontend release
+    secrets: inherit
+    uses: ./.github/workflows/earlcoin-algo-frontend-ci.yaml
+
+  earlcoin-algo-frontend-release:
+    name: Run earlcoin-algo-frontend release
+    secrets: inherit
+    uses: ./.github/workflows/earlcoin-algo-frontend-cd.yaml
+    needs: earlcoin-algo-frontend-validate

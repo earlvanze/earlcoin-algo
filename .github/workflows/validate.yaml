@@ -1,0 +1,14 @@
+name: Pull Request validation
+
+on: [pull_request]
+
+
+jobs:
+  earlcoin-algo-contracts-ci:
+    name: Run earlcoin-algo-contracts validation
+    uses: ./.github/workflows/earlcoin-algo-contracts-ci.yaml
+
+  earlcoin-algo-frontend-ci:
+    name: Run earlcoin-algo-frontend validation
+    uses: ./.github/workflows/earlcoin-algo-frontend-ci.yaml
+
