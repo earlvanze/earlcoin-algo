@@ -4,14 +4,20 @@ version = "0.1.0"
 description = "Algorand smart contracts"
 authors = ["John Doe <my@mail.com>"]
 readme = "README.md"
-package-mode = false
+packages = [
+  { include = "smart_contracts" }
+]
 
 [tool.poetry.dependencies]
-python = "^3.12"
-algokit-utils = "^4.0.0"
+python = ">=3.12,<4.0"
+algokit-utils = "^4.1.0"
 python-dotenv = "^1.0.0"
 algorand-python = "^2.0.0"
 algorand-python-testing = "~0"
+algosdk = "^2.7.0"
+py-algorand-sdk = "^2.9.1"
+pyteal = "^0.27"
+setuptools = "^80.9.0"
 
 [tool.poetry.group.dev.dependencies]
 algokit-client-generator = "^2.1.0"

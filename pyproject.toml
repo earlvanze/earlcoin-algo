@@ -1,0 +1,20 @@
+[project]
+name = "earlcoin-algo"
+version = "0.1.0"
+description = "Equity, Appreciation, Rents, and Liquidity Coin"
+authors = [
+    {name = "Earl Co"}
+]
+license = {text = "GPLv3"}
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+  "algokit-utils",
+  "httpx (>=0.28.1,<0.29.0)",
+  "algopy (>=0.7.2,<0.8.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
